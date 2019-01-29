@@ -111,7 +111,7 @@ function concertThis() {
         if (body.length > 0) {
           for (i = 0; i < 1; i++) {
    
-            var output = "Artist:" + body[i].lineup[0] + "\nVenue:" + body[i].venue.name + "\nVenue Location:" + body[i].venue.city + "," + body[i].venue.country + "\n" + moment(body[i].datetime).format("MM/DD/YYYY") + "\n===============================";
+            var output = "Artist:" + body[i].lineup[0] + "\nVenue:" + body[i].venue.name + "\nVenue Location:" + body[i].venue.city + "," + body[i].venue.country + "\nDate:" + moment(body[i].datetime).format("MM/DD/YYYY") + "\n===============================";
             console.log(output)
    
             fs.appendFile("log.txt", output, function(err) {
@@ -132,6 +132,7 @@ function doWhatItSays() {
         if (!error);
         console.log(data.toString());
         var cmds = data.toString().split(',');
+
     });
 }
 
